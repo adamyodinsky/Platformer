@@ -6,7 +6,7 @@ using TMPro;
 
 
 public class PlayerMovement : MonoBehaviour
-{
+{ 
   Vector2 MovementInput;
   Rigidbody2D rb;
   CapsuleCollider2D BodyCollider;
@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     if (value.isPressed)
     {
-      if (FeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+      if (IsOnGround())
       {
         rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         AudioSourceMain.PlayOneShot(jumpSFX, 0.5f);
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
     if (value.isPressed)
     {
-      if (FeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+      if (IsOnGround())
       {
         animator.SetTrigger("Roll");
         AudioSourceMain.PlayOneShot(RollFX, 0.3f);
@@ -148,15 +148,11 @@ public class PlayerMovement : MonoBehaviour
   void OnCollisionEnter2D(Collision2D other)
   {
     if (other.gameObject.tag == "Enemy" && isAlive) {
-        isAlive = false;
-        AudioSourceBG.pitch = 0.7f;
-        animator.SetTrigger("Die");
-        AudioSourceMain.PlayOneShot(deathSFX, 0.5f);
-    }
-
-    if (other.gameObject.tag == "Ground") {
-        AudioSourceMain.PlayOneShot(LandSFX, 0.5f);
-    }
+      isAlive = false;
+      AudioSourceBG.pitch = 0.7f;
+      animator.SetTrigger("Die");
+      AudioSourceMain.PlayOneShot(deathSFX, 0.5f);
+      } 
   }
 
   void OnTriggerEnter2D(Collider2D other)
@@ -180,5 +176,9 @@ public class PlayerMovement : MonoBehaviour
   public void RollSpeedDecrease() {
     runSpeed = defaultRunSpeed;
     jumpSpeed = defaultJumpSpeed;
+  }
+
+  bool IsOnGround() {
+    return FeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
   }
 }

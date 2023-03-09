@@ -8,10 +8,16 @@ public class LevelExit : MonoBehaviour
     [SerializeField] float levelLoadDelay = 1f;
     public AudioClip levelExitSFX;
     private bool exit = false;
+    SoundManager SoundManager;
+
+    void Start()
+    {
+        SoundManager = FindObjectOfType<SoundManager>();
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        AudioSource.PlayClipAtPoint(levelExitSFX, Camera.main.transform.position, 0.5f);
+        SoundManager.PlaySound(levelExitSFX, 0.6f);
         StartCoroutine(LoadNextLevel());
     }
 

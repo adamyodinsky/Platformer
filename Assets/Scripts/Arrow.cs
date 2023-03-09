@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Arrow : MonoBehaviour
 {
-  public float arrowSpeed = 8f;
-  public float xSpeed;
-  public int killingPoints = 500;
+  float arrowSpeed = 9f;
+  float xSpeed;
+  
   Rigidbody2D rb;
-  public PlayerMovement playerMovement;
+  PlayerMovement playerMovement;
   
 
   // Start is called before the first frame update
@@ -29,10 +29,6 @@ public class Arrow : MonoBehaviour
   void OnCollisionEnter2D(Collision2D other)
   {
     Destroy(gameObject);
-    if (other.gameObject.tag == "Enemy")
-    {
-      FindObjectOfType<GameSession>().AddScore(killingPoints);
-    }
   }
 
   void shootArrow()

@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - Arrow
   - Coin
+  - PlayerOnJump
   layers:
   - Default
   - TransparentFX

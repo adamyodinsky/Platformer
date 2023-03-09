@@ -3,12 +3,15 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
   float moveSpeed = 1f;
+  int killingPoints = 500;
+
   Rigidbody2D rb;
   BoxCollider2D bodyCollider;
   CapsuleCollider2D edgeCollider;
   Collider2D coll;
   Animator animator;
   SoundManager SoundManager;
+  GameSession gameSession;
 
   [SerializeField] AudioClip deathSFX;
 
@@ -20,8 +23,8 @@ public class EnemyMovement : MonoBehaviour
     bodyCollider = GetComponent<BoxCollider2D>();
     edgeCollider = GetComponent<CapsuleCollider2D>();
     animator = GetComponent<Animator>();
-    AudioSource SFXSource = GetComponent<AudioSource>();
     SoundManager = FindObjectOfType<SoundManager>();
+    gameSession = FindObjectOfType<GameSession>();
   }
 
   // Update is called once per frame
@@ -57,6 +60,7 @@ public class EnemyMovement : MonoBehaviour
   public void Die()
   {
     moveSpeed = 0f;
+    gameSession.AddScore(killingPoints);
     SoundManager.PlaySound(deathSFX, 0.5f);
     animator.SetTrigger("Die");
     transform.localScale = new Vector2(1, -1);
