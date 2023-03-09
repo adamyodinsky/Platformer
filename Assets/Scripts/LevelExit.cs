@@ -20,7 +20,7 @@ public class LevelExit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isActivated) {
+        if (!isActivated && other.gameObject.tag == "Player") {
             isActivated = true;
             SoundManager.PlaySound(levelExitSFX, 0.7f);
             playerMovement.TurnOffBgMusic();
