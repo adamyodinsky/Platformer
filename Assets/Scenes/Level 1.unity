@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: m_ChildCameras.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2824007385299771554, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
+      propertyPath: m_Instructions.Array.data[0].m_ActivateAfter
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2824007385317293188, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -663,6 +667,10 @@ PrefabInstance:
       propertyPath: orthographic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2824007385317293191, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
+      propertyPath: orthographic size
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2824007385762746173, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -679,6 +687,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2824007385762746175, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2824007385900273168, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.200422
@@ -690,6 +702,10 @@ PrefabInstance:
     - target: {fileID: 2824007385900273169, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
       propertyPath: m_Follow
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824007385900273169, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adbb94c1aab643e5a408b429f36b3a1, type: 3}
@@ -1717,10 +1733,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 848180107, guid: b6a8eda5a54e54652b583824f13db5d1, type: 3}
-      propertyPath: levelExitSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 9a5386ce8cee84c0f96d42676981b433, type: 3}
     - target: {fileID: 3601920321020069099, guid: b6a8eda5a54e54652b583824f13db5d1, type: 3}
       propertyPath: m_Name
       value: Exit

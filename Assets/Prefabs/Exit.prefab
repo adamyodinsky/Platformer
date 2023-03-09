@@ -222,4 +222,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoadDelay: 1
-  levelExitSFX: {fileID: 8300000, guid: 8a40c51b6f5a7244b9074b73808f35bb, type: 3}
+  levelExitSFX: {fileID: 8300000, guid: 9a5386ce8cee84c0f96d42676981b433, type: 3}
