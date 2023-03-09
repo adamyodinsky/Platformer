@@ -2723,6 +2723,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platforms Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 1215580918495339107, guid: 75d2335dcc49149669b918de41cdeb06, type: 3}
+      propertyPath: m_Color.a
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215580918495339107, guid: 75d2335dcc49149669b918de41cdeb06, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215580918495339107, guid: 75d2335dcc49149669b918de41cdeb06, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9046205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215580918495339107, guid: 75d2335dcc49149669b918de41cdeb06, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8387772
+      objectReference: {fileID: 0}
     - target: {fileID: 1215580918711895015, guid: 75d2335dcc49149669b918de41cdeb06, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[0].Array.data[0].x
       value: 19.661263

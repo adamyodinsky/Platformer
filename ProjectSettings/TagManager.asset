@@ -54,9 +54,6 @@ TagManager:
   - name: Platforms
     uniqueID: 2905382531
     locked: 0
-  - name: Water
-    uniqueID: 3265097237
-    locked: 0
   - name: Climbing
     uniqueID: 570787507
     locked: 0
@@ -71,4 +68,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2864980621
+    locked: 0
+  - name: Water
+    uniqueID: 3265097237
     locked: 0
