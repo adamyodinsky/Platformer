@@ -15,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
 
   [SerializeField] AudioClip deathSFX;
 
-  // Start is called before the first frame update
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
@@ -25,12 +24,6 @@ public class EnemyMovement : MonoBehaviour
     animator = GetComponent<Animator>();
     SoundManager = FindObjectOfType<SoundManager>();
     gameSession = FindObjectOfType<GameSession>();
-  }
-
-  // Update is called once per frame
-  void Update()
-  {
-
   }
 
   void FixedUpdate()

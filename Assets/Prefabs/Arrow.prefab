@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1860964551560798347}
   - component: {fileID: -2489588565670849847}
   - component: {fileID: 1834475346}
+  - component: {fileID: -1600328892866691156}
   m_Layer: 10
   m_Name: Arrow
   m_TagString: Arrow
@@ -99,10 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dce93b42fa924adf95205c55b2db682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowSpeed: 8
-  xSpeed: 0
-  killingPoints: 500
-  playerMovement: {fileID: 0}
 --- !u!61 &-2489588565670849847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,3 +147,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &-1600328892866691156
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068207056882997231}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16085f3f3f7484b919ff12ec1f454a8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Arrow : MonoBehaviour
 {
-  float arrowSpeed = 9f;
+  float arrowSpeed = 8f;
   float xSpeed;
   
   Rigidbody2D rb;

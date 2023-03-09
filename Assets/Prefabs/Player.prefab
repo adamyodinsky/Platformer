@@ -133,7 +133,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 033766cc31c97904bae4404b8a079544, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -538,7 +538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FeetCollider: {fileID: 5447992297736084724}
-  JumpOnCollider: {fileID: 0}
   arrowPrefab: {fileID: 1860964551560798347, guid: 417665a3efbd94aec86fca96f7b8bef1, type: 3}
   firePosition: {fileID: 384711337}
   jumpSFX: {fileID: 8300000, guid: ac3af29bc70a74081a000d66113b9950, type: 3}

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
-
+using System;
 
 public class PlayerMovement : MonoBehaviour
 { 
@@ -109,13 +106,10 @@ public class PlayerMovement : MonoBehaviour
   {
     if (!isAlive) { return; }
 
-    if (value.isPressed)
+    if (value.isPressed && Math.Abs(rb.velocity.x) > 0.02f)
     {
-      if (IsOnGround())
-      {
-        animator.SetTrigger("Roll");
-        AudioSourceMain.PlayOneShot(RollFX, 0.3f);
-      }
+      animator.SetTrigger("Roll");
+      AudioSourceMain.PlayOneShot(RollFX, 0.5f); 
     }
   }
 
@@ -140,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
     if (value.isPressed && !animator.GetBool("isClimbing"))
     {
       animator.SetTrigger("Arrow");
-      AudioSourceMain.PlayOneShot(fireSFX, 0.4f);
+      AudioSourceMain.PlayOneShot(fireSFX, 0.5f);
       Instantiate(arrowPrefab, firePosition.position, transform.rotation);
     }
   }
@@ -160,11 +154,12 @@ public class PlayerMovement : MonoBehaviour
     if(other.gameObject.tag == "Coin") {
         Destroy(other.gameObject);
         FindObjectOfType<GameSession>().AddScore(pickupPoints);
-        AudioSourceMain.PlayOneShot(CoinSFX, 0.4f);
+        AudioSourceMain.PlayOneShot(CoinSFX, 0.3f);
     }
   }
 
-  public void Die() {
+  // Called by Animation Event
+  public void Die() { 
     FindObjectOfType<GameSession>().ProcessPlayerDeath();
   }
 
@@ -180,5 +175,9 @@ public class PlayerMovement : MonoBehaviour
 
   bool IsOnGround() {
     return FeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+  }
+
+  public void TurnOffBgMusic() {
+    AudioSourceBG.Stop();
   }
 }

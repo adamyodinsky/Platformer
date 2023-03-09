@@ -5,20 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] float levelLoadDelay = 1f;
-    public AudioClip levelExitSFX;
+    float levelLoadDelay = 4f;
+    [SerializeField] AudioClip levelExitSFX;
+    [SerializeField] AudioClip levelExitMusic;
     private bool exit = false;
     SoundManager SoundManager;
+    PlayerMovement playerMovement;
+    bool isActivated = false;
 
     void Start()
     {
         SoundManager = FindObjectOfType<SoundManager>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        SoundManager.PlaySound(levelExitSFX, 0.6f);
-        StartCoroutine(LoadNextLevel());
+        if (!isActivated) {
+            isActivated = true;
+            SoundManager.PlaySound(levelExitSFX, 0.7f);
+            playerMovement.TurnOffBgMusic();
+            SoundManager.PlaySound(levelExitMusic, 1f);
+            StartCoroutine(LoadNextLevel());
+        }
     }
 
     IEnumerator LoadNextLevel() {
