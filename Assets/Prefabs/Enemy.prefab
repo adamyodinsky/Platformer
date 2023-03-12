@@ -228,9 +228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318046f3b444147cfa0bff9d26e56d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
+  killingPoints: 50
+  lifePoints: 2
   bodyCollider: {fileID: 8299086151495337637}
   edgeCollider: {fileID: 4860727799592428274}
-  lifePoints: 5
   deathSFX: {fileID: 8300000, guid: 026076d371cdc604482a1794035cb5e2, type: 3}
   hitSFX: {fileID: 8300000, guid: 22c28920f9abb5442a566b9b6d077e18, type: 3}
 --- !u!1 &7648177361931485993

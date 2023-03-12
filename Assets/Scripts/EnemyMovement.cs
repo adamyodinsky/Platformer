@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-  float moveSpeed = 1f;
-  int killingPoints = 100;
+  [SerializeField] float moveSpeed = 1f;
+  [SerializeField] int killingPoints = 100;
+  [SerializeField] int lifePoints = 2;
 
   Rigidbody2D rb;
   Collider2D coll;
   Animator animator;
   SoundManager SoundManager;
   GameSession gameSession;
-  object _lock = new object();
 
   [SerializeField] BoxCollider2D bodyCollider;
   [SerializeField] CapsuleCollider2D edgeCollider;
-  [SerializeField] int lifePoints = 5;
   [SerializeField] AudioClip deathSFX;
   [SerializeField] AudioClip hitSFX;
 
@@ -42,15 +41,13 @@ public class EnemyMovement : MonoBehaviour
 
     if (other.gameObject.tag == "Arrow")
     {
-      lock(_lock) {
         lifePoints--;
-        SoundManager.PlaySound(hitSFX, 0.5f);
+        SoundManager.PlaySound(hitSFX, 0.4f);
         gameSession.AddScore(killingPoints);
         if (lifePoints <= 0)
         {
           Die();
         }
-      }
     }
   }
 
