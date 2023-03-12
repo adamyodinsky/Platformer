@@ -3,24 +3,25 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
   float moveSpeed = 1f;
-  int killingPoints = 500;
+  int killingPoints = 100;
 
   Rigidbody2D rb;
-  BoxCollider2D bodyCollider;
-  CapsuleCollider2D edgeCollider;
   Collider2D coll;
   Animator animator;
   SoundManager SoundManager;
   GameSession gameSession;
+  object _lock = new object();
 
+  [SerializeField] BoxCollider2D bodyCollider;
+  [SerializeField] CapsuleCollider2D edgeCollider;
+  [SerializeField] int lifePoints = 5;
   [SerializeField] AudioClip deathSFX;
+  [SerializeField] AudioClip hitSFX;
 
   void Start()
   {
     rb = GetComponent<Rigidbody2D>();
     coll = GetComponent<Collider2D>();
-    bodyCollider = GetComponent<BoxCollider2D>();
-    edgeCollider = GetComponent<CapsuleCollider2D>();
     animator = GetComponent<Animator>();
     SoundManager = FindObjectOfType<SoundManager>();
     gameSession = FindObjectOfType<GameSession>();
@@ -41,7 +42,15 @@ public class EnemyMovement : MonoBehaviour
 
     if (other.gameObject.tag == "Arrow")
     {
-      Die();
+      lock(_lock) {
+        lifePoints--;
+        SoundManager.PlaySound(hitSFX, 0.5f);
+        gameSession.AddScore(killingPoints);
+        if (lifePoints <= 0)
+        {
+          Die();
+        }
+      }
     }
   }
 
